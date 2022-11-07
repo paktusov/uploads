@@ -33,7 +33,7 @@ def upload_file():
                 try:
                     if allowed_file(file.filename, ALLOWED_EXTENSIONS):
                         name, ext, filename = save_image(file, app.config['UPLOAD_FOLDER'])
-                        filenames.append(filename)
+                        filenames.append(f'{filename}.{ext}')
                         resize_filename = save_resize_image(filename, ext, app.config['UPLOAD_FOLDER'])
                         filenames.append(resize_filename)
                     else:

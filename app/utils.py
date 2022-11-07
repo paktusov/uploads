@@ -13,6 +13,7 @@ def allowed_file(filename, exeptions):
 def save_image(file, path):
     name = '.'.join(file.filename.split('.')[:-1])
     ext = file.filename.split('.')[-1]
+    print(ext)
     filename = f'{shortuuid.uuid()}_{dt.date.today().isoformat()}_{name}'
     file.save(os.path.join(path, f'{filename}.{ext}'))
     return name, ext, filename
