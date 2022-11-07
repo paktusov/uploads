@@ -35,7 +35,7 @@ def upload_file():
                         name, ext, filename = save_image(file, app.config['UPLOAD_FOLDER'])
                         filenames.append(f'{filename}.{ext}')
                         resize_filename = save_resize_image(filename, ext, app.config['UPLOAD_FOLDER'])
-                        filenames.append(resize_filename)
+                        filenames.append(f'{resize_filename}.{ext}')
                     else:
                         raise Exception
                 except:

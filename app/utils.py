@@ -19,13 +19,11 @@ def save_image(file, path):
 
 
 def save_resize_image(filename, ext, path):
-    resize_filename = f'{filename}_TN.{ext}'
+    resize_filename = f'{filename}_TN'
     image = Image.open(os.path.join(path, f'{filename}.{ext}'))
     width, height = image.size
     ratio = (height / width)
     new_height = ratio * 500
-    # print(new_height, ratio, width, height)
     resize_image = image.resize((500, floor(new_height)))
-    print(resize_filename)
-    resize_image.save(os.path.join(path, resize_filename))
+    resize_image.save(os.path.join(path, f'{resize_filename}.{ext}'))
     return resize_filename
