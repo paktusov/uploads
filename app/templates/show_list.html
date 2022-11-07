@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <div>
+            {% for file in files %}
+                <b><a href="{{url_for('static', filename=file)}}" download>{{file}}</a></b><br>
+            {% endfor %}
+        </div>
+    </body>
+</html>
